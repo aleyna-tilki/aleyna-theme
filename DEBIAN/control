@@ -1,0 +1,11 @@
+Package: aleyna-theme
+Version: 9999-noupdate
+Architecture: all
+Maintainer: amogus amogus <amogus.amogus.amogus>
+Installed-Size: 1
+Depends: libc6
+Section: devel
+Priority: optional
+Multi-Arch: foreign
+Description: Aleyna theme
+ Aleyna tilki theme
