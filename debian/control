@@ -1,0 +1,13 @@
+Source: aleyna-theme
+Section: utils
+Priority: optional
+Maintainer: Your Name <you@example.org>
+Build-Depends: make
+Standards-Version: 4.3.0
+Homepage: https://github.com/aleyna-tilki
+
+Package: aleyna-theme
+Architecture: any
+Depends: libc6
+Description: Aleyna Tilki Linux Theme
+  Aleyna Tilki Linux Theme
