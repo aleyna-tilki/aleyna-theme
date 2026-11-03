@@ -4860,3 +4860,150 @@ TerminalNotebook.notebook {
     color: mix(#ffffff,#e05e59,0.15); }
   TerminalNotebook.notebook .active-page, TerminalNotebook.notebook .active-page GtkLabel {
     color: #ffffff; }
+
+/*************************************
+ ! Aleyna polish (visual only)      *
+ ! Uses the existing palette colours *
+ *************************************/
+
+/* Keyboard focus stays visible everywhere. */
+*:focus {
+  outline-color: mix(@theme_selected_bg_color, @theme_fg_color, 0.4); }
+
+/* Buttons get a soft bevel and real press depth. */
+.button {
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.07), alpha(#000000, 0.05));
+  border-color: alpha(@theme_fg_color, 0.22);
+  box-shadow: 0 1px 2px alpha(#000000, 0.20), inset 0 1px alpha(#ffffff, 0.10); }
+.button:hover {
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.13), alpha(#000000, 0.03));
+  box-shadow: 0 2px 4px alpha(#000000, 0.24), inset 0 1px alpha(#ffffff, 0.16); }
+.button:active, .button:checked {
+  background-image: linear-gradient(to bottom, alpha(#000000, 0.12), alpha(#ffffff, 0.03));
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.30); }
+.button:insensitive {
+  box-shadow: none; }
+
+/* Title bars sit slightly above the window body. */
+.header-bar {
+  background-color: mix(#e05e59, #bf4040, 0.55);
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.08), alpha(#000000, 0.06));
+  border-color: mix(#e05e59, #000000, 0.22);
+  box-shadow: inset 0 1px alpha(#ffffff, 0.12), 0 1px 4px alpha(#000000, 0.22); }
+.header-bar .title {
+  text-shadow: 0 1px alpha(#000000, 0.25); }
+.header-bar .button {
+  background-color: alpha(#ffffff, 0.10);
+  background-image: none;
+  border-color: alpha(#ffffff, 0.18);
+  color: #ffffff;
+  box-shadow: none; }
+.header-bar .button:hover, .header-bar .button:focus {
+  background-color: alpha(#ffffff, 0.20);
+  border-color: alpha(#ffffff, 0.28); }
+.header-bar .button:active, .header-bar .button:checked {
+  background-color: alpha(#000000, 0.14);
+  box-shadow: inset 0 1px 2px alpha(#000000, 0.25); }
+.header-bar .button.flat {
+  background-color: transparent;
+  border-color: transparent; }
+.header-bar .button.flat:hover {
+  background-color: alpha(#ffffff, 0.16); }
+
+/* Call-to-action and destructive buttons use the theme accents. */
+.suggested-action.button {
+  background-color: @theme_selected_bg_color;
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.16), alpha(#000000, 0.06));
+  border-color: mix(@theme_selected_bg_color, #000000, 0.30);
+  color: @theme_selected_fg_color;
+  box-shadow: 0 1px 3px alpha(#000000, 0.25), inset 0 1px alpha(#ffffff, 0.22); }
+.suggested-action.button:hover, .suggested-action.button:focus {
+  background-color: mix(@theme_selected_bg_color, #ffffff, 0.16); }
+.suggested-action.button:active, .suggested-action.button:checked {
+  background-color: mix(@theme_selected_bg_color, #000000, 0.12);
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.30); }
+.suggested-action.button:insensitive {
+  background-color: alpha(@theme_selected_bg_color, 0.45);
+  color: alpha(@theme_selected_fg_color, 0.55);
+  box-shadow: none; }
+.destructive-action.button {
+  background-color: @error_color;
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.14), alpha(#000000, 0.08));
+  border-color: mix(@error_color, #000000, 0.35);
+  color: #ffffff;
+  box-shadow: 0 1px 3px alpha(#000000, 0.28), inset 0 1px alpha(#ffffff, 0.22); }
+.destructive-action.button:hover, .destructive-action.button:focus {
+  background-color: mix(@error_color, #ffffff, 0.14); }
+.destructive-action.button:active, .destructive-action.button:checked,
+.destructive-action.button:active:hover, .destructive-action.button:active:focus,
+.destructive-action.button:checked:hover, .destructive-action.button:checked:focus {
+  background-color: mix(@error_color, #000000, 0.14);
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.32); }
+.destructive-action.button:insensitive,
+.destructive-action.button:active:insensitive,
+.destructive-action.button:checked:insensitive {
+  background-color: alpha(@error_color, 0.45);
+  color: alpha(#ffffff, 0.75);
+  box-shadow: none; }
+
+/* Entries become recessed wells with a clear focus ring. */
+.entry {
+  background-image: linear-gradient(to bottom, alpha(#000000, 0.10), alpha(#ffffff, 0.02));
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.18); }
+.entry:hover {
+  border-color: mix(@theme_selected_bg_color, @theme_fg_color, 0.55); }
+.entry:focus {
+  border-color: mix(@theme_selected_bg_color, @theme_fg_color, 0.40);
+  box-shadow: inset 0 0 0 1px alpha(@theme_selected_bg_color, 0.65), 0 0 0 2px alpha(@theme_selected_bg_color, 0.18); }
+
+/* Notebook tabs read as raised paper tabs. */
+.notebook {
+  background-color: @theme_bg_color; }
+.notebook GtkViewport {
+  background-color: @theme_base_color; }
+.notebook.header.top {
+  box-shadow: inset 0 -2px alpha(#000000, 0.16); }
+.notebook.header.bottom {
+  box-shadow: inset 0 2px alpha(#000000, 0.16); }
+.notebook tab {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  box-shadow: inset 0 1px alpha(#ffffff, 0.10); }
+.notebook tab.bottom {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px; }
+.notebook tab.top:active, .notebook tab:active {
+  box-shadow: 0 -2px 6px alpha(#000000, 0.12), inset 0 1px alpha(#ffffff, 0.16); }
+
+/* Progress, level bars, scales and switches get a soft sheen. */
+.progressbar {
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.30), alpha(#000000, 0.06));
+  box-shadow: inset 0 1px alpha(#ffffff, 0.35); }
+.level-bar.fill-block {
+  box-shadow: inset 0 1px alpha(#ffffff, 0.25); }
+.scale.trough {
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.22); }
+.scale.slider {
+  box-shadow: 0 1px 3px alpha(#000000, 0.30), inset 0 1px alpha(#ffffff, 0.30); }
+GtkSwitch.trough {
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.25); }
+GtkSwitch.trough:active {
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.18); }
+GtkSwitch.slider {
+  box-shadow: 0 1px 3px alpha(#000000, 0.30), inset 0 1px alpha(#ffffff, 0.30); }
+
+/* Scrollbars stay out of the way but remain easy to grab. */
+.scrollbar.slider, .scrollbar.slider.vertical {
+  background-color: alpha(@theme_fg_color, 0.40); }
+.scrollbar.slider:hover, .scrollbar.slider.vertical:hover {
+  background-color: alpha(@theme_fg_color, 0.55); }
+.scrollbar.slider:active, .scrollbar.slider.vertical:active {
+  background-color: @theme_selected_bg_color; }
+.scrollbar.trough, .scrollbars-junction, .scrollbars-junction.frame {
+  background-color: transparent; }
+
+/* Menus and popovers float above the content. */
+.menu, .popover, GtkPopover {
+  box-shadow: 0 6px 18px alpha(#000000, 0.35); }

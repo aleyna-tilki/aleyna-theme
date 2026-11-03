@@ -9185,3 +9185,190 @@ terminal-window scrollbar.vertical slider {
 
 .raven-mpris {
   background-color: rgba(255, 255, 255, 0.7); }
+
+/*************************************
+ ! Aleyna polish (visual only)      *
+ ! Uses the existing palette colours *
+ *************************************/
+
+/* Keyboard focus stays visible everywhere. */
+*:focus {
+  outline-color: mix(@theme_selected_bg_color, @theme_fg_color, 0.4); }
+
+/* Buttons get a soft bevel and real press depth. */
+button, button.nautilus-circular-button.image-button {
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.07), alpha(#000000, 0.05));
+  border-color: alpha(@theme_fg_color, 0.22);
+  box-shadow: 0 1px 2px alpha(#000000, 0.18), inset 0 1px alpha(#ffffff, 0.10); }
+button:hover, button.nautilus-circular-button.image-button:hover {
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.13), alpha(#000000, 0.03));
+  border-color: mix(@theme_selected_bg_color, @theme_fg_color, 0.5);
+  box-shadow: 0 2px 4px alpha(#000000, 0.20), inset 0 1px alpha(#ffffff, 0.16); }
+button:active, button:checked {
+  background-image: linear-gradient(to bottom, alpha(#000000, 0.12), alpha(#ffffff, 0.03));
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.28); }
+button:disabled {
+  box-shadow: none; }
+
+/* Title bars sit slightly above the window body. */
+headerbar, .titlebar:not(headerbar) {
+  background-color: mix(#e05e59, #bf4040, 0.55);
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.08), alpha(#000000, 0.06));
+  border-color: mix(#e05e59, #000000, 0.22);
+  box-shadow: inset 0 1px alpha(#ffffff, 0.12), 0 1px 4px alpha(#000000, 0.22); }
+headerbar .title, .titlebar:not(headerbar) .title {
+  text-shadow: 0 1px alpha(#000000, 0.25); }
+headerbar button, .titlebar:not(headerbar) button {
+  background-color: alpha(#ffffff, 0.10);
+  background-image: none;
+  border-color: alpha(#ffffff, 0.18);
+  color: #ffffff;
+  box-shadow: none; }
+headerbar button:hover, .titlebar:not(headerbar) button:hover,
+headerbar button:focus, .titlebar:not(headerbar) button:focus {
+  background-color: alpha(#ffffff, 0.20);
+  border-color: alpha(#ffffff, 0.28); }
+headerbar button:active, .titlebar:not(headerbar) button:active,
+headerbar button:checked, .titlebar:not(headerbar) button:checked {
+  background-color: alpha(#000000, 0.14);
+  box-shadow: inset 0 1px 2px alpha(#000000, 0.25); }
+headerbar button.flat, .titlebar:not(headerbar) button.flat {
+  background-color: transparent;
+  border-color: transparent; }
+headerbar button.flat:hover, .titlebar:not(headerbar) button.flat:hover {
+  background-color: alpha(#ffffff, 0.16); }
+
+/* Call-to-action and destructive buttons use the theme accents. */
+.suggested-action, headerbar.selection-mode button.suggested-action,
+.titlebar:not(headerbar).selection-mode button.suggested-action {
+  background-color: @theme_selected_bg_color;
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.16), alpha(#000000, 0.06));
+  border-color: mix(@theme_selected_bg_color, #000000, 0.30);
+  color: @theme_selected_fg_color;
+  box-shadow: 0 1px 3px alpha(#000000, 0.25), inset 0 1px alpha(#ffffff, 0.22); }
+.suggested-action:hover {
+  background-color: mix(@theme_selected_bg_color, #ffffff, 0.16); }
+.suggested-action:active, .suggested-action:checked {
+  background-color: mix(@theme_selected_bg_color, #000000, 0.12);
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.30); }
+.suggested-action:disabled,
+.suggested-action:disabled:disabled,
+.suggested-action.flat:disabled:disabled,
+.suggested-action:active:disabled,
+.suggested-action:checked:disabled {
+  background-color: alpha(@theme_selected_bg_color, 0.45);
+  color: alpha(@theme_selected_fg_color, 0.55);
+  opacity: 1;
+  box-shadow: none; }
+.destructive-action {
+  background-color: @error_color;
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.14), alpha(#000000, 0.08));
+  border-color: mix(@error_color, #000000, 0.35);
+  color: #ffffff;
+  box-shadow: 0 1px 3px alpha(#000000, 0.28), inset 0 1px alpha(#ffffff, 0.22); }
+.destructive-action:hover {
+  background-color: mix(@error_color, #ffffff, 0.14); }
+.destructive-action:active, .destructive-action:checked {
+  background-color: mix(@error_color, #000000, 0.14);
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.32); }
+.destructive-action:disabled {
+  background-color: mix(@error_color, @theme_bg_color, 0.45);
+  color: alpha(#ffffff, 0.75); }
+
+/* Backdrop must keep the action buttons readable. */
+.suggested-action:backdrop,
+.suggested-action.flat:backdrop {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color; }
+.destructive-action:backdrop,
+.destructive-action.flat:backdrop {
+  background-color: @error_color;
+  color: #ffffff; }
+
+/* Entries become recessed wells with a clear focus ring. */
+entry, menuitem entry, popover.background entry, .osd entry,
+#XfceNotifyWindow entry, #login_window entry,
+.view, iconview, textview text {
+  caret-color: @theme_fg_color;
+  -gtk-secondary-caret-color: @theme_selected_bg_color; }
+entry, menuitem entry, popover.background entry, .osd entry,
+#XfceNotifyWindow entry, #login_window entry {
+  background-image: linear-gradient(to bottom, alpha(#000000, 0.10), alpha(#ffffff, 0.02));
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.18); }
+entry:hover {
+  border-color: mix(@theme_selected_bg_color, @theme_fg_color, 0.55); }
+entry:focus {
+  border-color: mix(@theme_selected_bg_color, @theme_fg_color, 0.40);
+  box-shadow: inset 0 0 0 1px alpha(@theme_selected_bg_color, 0.65), 0 0 0 2px alpha(@theme_selected_bg_color, 0.18); }
+
+/* Notebook tabs read as raised paper tabs. */
+notebook > stack:not(:only-child) {
+  background-color: @theme_bg_color; }
+notebook > header.top {
+  box-shadow: inset 0 -2px alpha(#000000, 0.16); }
+notebook > header.bottom {
+  box-shadow: inset 0 2px alpha(#000000, 0.16); }
+notebook > header > tabs > tab {
+  border-radius: 12px 12px 0 0;
+  box-shadow: inset 0 1px alpha(#ffffff, 0.10); }
+notebook > header.top > tabs > tab:first-child {
+  border-top-left-radius: 12px; }
+notebook > header.top > tabs > tab:last-child {
+  border-top-right-radius: 12px; }
+notebook > header.bottom > tabs > tab {
+  border-radius: 0 0 12px 12px; }
+notebook > header.bottom > tabs > tab:first-child {
+  border-bottom-left-radius: 12px; }
+notebook > header.bottom > tabs > tab:last-child {
+  border-bottom-right-radius: 12px; }
+notebook > header.left > tabs > tab {
+  border-radius: 12px 0 0 12px; }
+notebook > header.right > tabs > tab {
+  border-radius: 0 12px 12px 0; }
+notebook > header > tabs > tab:checked {
+  box-shadow: 0 -2px 6px alpha(#000000, 0.12), inset 0 1px alpha(#ffffff, 0.16); }
+notebook > header > tabs > tab:hover:not(:checked) {
+  background-color: alpha(#ffffff, 0.10); }
+
+/* Progress, level bars and switches get a soft sheen. */
+progressbar trough {
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.22); }
+progressbar progress {
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.30), alpha(#000000, 0.06));
+  box-shadow: inset 0 1px alpha(#ffffff, 0.35); }
+levelbar block {
+  box-shadow: inset 0 1px alpha(#ffffff, 0.25); }
+scale highlight {
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.25), alpha(#000000, 0.05)); }
+switch {
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.25); }
+switch:checked {
+  box-shadow: inset 0 1px 3px alpha(#000000, 0.18); }
+switch slider {
+  box-shadow: 0 1px 3px alpha(#000000, 0.30), inset 0 1px alpha(#ffffff, 0.30); }
+
+/* Scrollbars stay out of the way but remain easy to grab. */
+scrollbar {
+  background-color: transparent; }
+scrollbar slider {
+  min-width: 8px;
+  min-height: 8px;
+  background-color: alpha(@theme_fg_color, 0.40); }
+scrollbar slider:hover {
+  background-color: alpha(@theme_fg_color, 0.55); }
+scrollbar slider:hover:active {
+  background-color: @theme_selected_bg_color; }
+
+/* Menus and popovers float above the content. */
+popover.background, menu {
+  border: 1px solid alpha(@theme_fg_color, 0.12);
+  box-shadow: 0 6px 18px alpha(#000000, 0.35); }
+
+/* The light variant needs slightly stronger tracks to stay visible. */
+progressbar trough {
+  background-color: mix(@theme_bg_color, @theme_fg_color, 0.18);
+  border-color: alpha(@theme_fg_color, 0.30); }
+scale trough {
+  background-color: mix(@theme_bg_color, @theme_fg_color, 0.22); }
+switch {
+  background-color: mix(@theme_bg_color, @theme_fg_color, 0.22); }
