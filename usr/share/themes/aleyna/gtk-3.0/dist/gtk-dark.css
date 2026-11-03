@@ -613,10 +613,10 @@ GtkComboBox .separator {
     background-image: none;
     color: mix(#e05e59,#ffffff,0.5); }
   .toolbar .title {
-    font: bold;
+    font-weight: bold;
     padding: 0 6px; }
   .toolbar .subtitle {
-    font: smaller;
+    font-size: smaller;
     padding: 0 6px; }
   .toolbar .button, .toolbar .selection-mode.header-bar .button.suggested-action, .selection-mode.header-bar .toolbar .button.suggested-action, .selection-mode.toolbar .button.suggested-action {
     background-color: #ffffff;
@@ -770,10 +770,10 @@ GtkComboBox .separator {
     background-image: none;
     color: mix(#ffffff,#e05e59,0.5); }
   .header-bar .title {
-    font: bold;
+    font-weight: bold;
     padding: 0 6px; }
   .header-bar .subtitle {
-    font: smaller;
+    font-size: smaller;
     padding: 0 6px; }
   .header-bar .button, .selection-mode.header-bar .button.suggested-action, .header-bar .selection-mode.toolbar .button.suggested-action, .selection-mode.toolbar .header-bar .button.suggested-action {
     background-color: #ffffff;
@@ -917,7 +917,7 @@ GtkComboBox .separator {
   .tiled .titlebar, .maximized .titlebar {
     border-radius: 0; }
   .titlebar .title {
-    font: bold; }
+    font-weight: bold; }
   .titlebar .titlebutton {
     padding: 3px;
     border: 0;
@@ -956,10 +956,10 @@ GtkComboBox .separator {
   .action-bar .button.image-button, .action-bar .selection-mode.header-bar .image-button.button.suggested-action, .selection-mode.header-bar .action-bar .image-button.button.suggested-action, .action-bar .selection-mode.toolbar .image-button.button.suggested-action, .selection-mode.toolbar .action-bar .image-button.button.suggested-action {
     padding: 4px; }
   .action-bar .title {
-    font: bold;
+    font-weight: bold;
     padding: 0 6px; }
   .action-bar .subtitle {
-    font: smaller;
+    font-size: smaller;
     padding: 0 6px; }
 
 /***************
@@ -1188,10 +1188,10 @@ GtkComboBox .separator {
     background-image: none;
     color: mix(#000000,#ffb7ad,0.5); }
   .selection-mode.header-bar .title, .selection-mode.toolbar .title {
-    font: bold;
+    font-weight: bold;
     padding: 0 6px; }
   .selection-mode.header-bar .subtitle, .selection-mode.toolbar .subtitle {
-    font: smaller;
+    font-size: smaller;
     padding: 0 6px; }
   .selection-mode.header-bar .button, .selection-mode.header-bar .button.suggested-action, .selection-mode.toolbar .button, .selection-mode.toolbar .button.suggested-action {
     background-color: #ffffff;
@@ -2669,12 +2669,12 @@ EPreviewPane .entry {
  ! Gnome Bluetooth *
 ********************/
 GtkEntry.entry.pin-entry {
-  font: regular 50;
+  font-size: 50px;
   padding-left: 25px;
   padding-right: 25px; }
 
 GtkLabel.pin-label {
-  font: regular 50; }
+  font-size: 50px; }
 
 /*********
  ! Buttons
@@ -3681,7 +3681,7 @@ GtkAssistant .sidebar {
   GtkAssistant .sidebar.csd .sidebar {
     border-top-style: none; }
   GtkAssistant .sidebar .highlight {
-    font: bold; }
+    font-weight: bold; }
 
 /******
 ! Paned
@@ -3837,7 +3837,7 @@ GtkPaned {
 GtkSwitch {
   padding: 0;
   border-radius: 20px;
-  font: bold condensed;
+  font-weight: bold;
   outline-offset: -4px; }
   GtkSwitch.slider {
     background-color: white;
@@ -3914,7 +3914,7 @@ row:selected, row:selected:hover, row:selected:focus {
     background-color: transparent; }
 
 .content-view .subtitle, GtkIconView.content-view.check .subtitle {
-  font: smaller;
+  font-size: smaller;
   padding: 0 12px; }
 
 GtkIconView.view.cell:selected, GtkIconView.view.cell:selected:focus {
@@ -4516,7 +4516,7 @@ XfceHeading {
   color: #bf4040; }
 
 .xfce4-panel {
-  font: normal; }
+  font-weight: normal; }
   .xfce4-panel .menu {
     -gtk-image-effect: none; }
 
@@ -4580,14 +4580,14 @@ SheetStyleDialog.unity-force-quit {
   background-color: transparent;
   background-image: none;
   color: white;
-  font: bold;
+  font-weight: bold;
   text-shadow: 0 1px rgba(105, 23, 20, 0.5);
   icon-shadow: 0 1px rgba(105, 23, 20, 0.5); }
   #panel_window .menubar, #panel_window .menubar > .menuitem {
     background-color: transparent;
     background-image: none;
     color: white;
-    font: bold;
+    font-weight: bold;
     text-shadow: 0 1px rgba(105, 23, 20, 0.5);
     icon-shadow: 0 1px rgba(105, 23, 20, 0.5); }
     #panel_window .menubar *:hover, #panel_window .menubar > .menuitem *:hover {
@@ -4602,7 +4602,7 @@ SheetStyleDialog.unity-force-quit {
     #panel_window .menubar .menu, #panel_window .menubar > .menuitem .menu {
       border-radius: 1px; }
       #panel_window .menubar .menu .menuitem, #panel_window .menubar > .menuitem .menu .menuitem {
-        font: normal;
+        font-weight: normal;
         text-shadow: none; }
 
 #content_frame {
@@ -4660,9 +4660,9 @@ SheetStyleDialog.unity-force-quit {
 
 #user_combobox {
   color: #ffffff;
-  font: 18px; }
+  font-size: 18px; }
   #user_combobox .menu {
-    font: normal; }
+    font-weight: normal; }
   #user_combobox .arrow {
     color: mix(#ffffff,#e05e59,0.5); }
 
@@ -4710,7 +4710,7 @@ SheetStyleDialog.unity-force-quit {
 
 /* password warning */
 #greeter_infobar {
-  font: bold; }
+  font-weight: bold; }
 
 /**********************
  ! Genome Terminal *

@@ -1,0 +1,71 @@
+#!/bin/sh
+# Aleyna theme first-run setup.
+#
+# Xfce stores backdrop settings per monitor connector (for example
+# monitorVirtual-1, monitorHDMI-1 or monitoreDP-1), so a fixed
+# /etc/skel configuration cannot cover every machine.  On the first
+# login this script applies the theme wallpaper to every connected
+# monitor and workspace.  A marker file prevents it from overriding a
+# wallpaper the user chooses later.
+
+WALLPAPER="/usr/share/backgrounds/aleyna.png"
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/aleyna-theme"
+MARKER="$CONFIG_DIR/first-run-done"
+
+[ -f "$MARKER" ] && exit 0
+[ -r "$WALLPAPER" ] || exit 0
+
+# Wait for the X server and xrandr to report at least one monitor.
+tries=0
+monitors=""
+while [ "$tries" -lt 20 ]; do
+    monitors=$(xrandr --query 2>/dev/null | awk '/ connected/{print $1}')
+    [ -n "$monitors" ] && break
+    sleep 0.5
+    tries=$((tries + 1))
+done
+[ -n "$monitors" ] || exit 0
+
+workspaces=$(xfconf-query -c xfwm4 -p /general/workspace_count 2>/dev/null)
+case "$workspaces" in
+    ''|*[!0-9]*) workspaces=4 ;;
+esac
+[ "$workspaces" -gt 0 ] 2>/dev/null || workspaces=4
+
+# Reuse the existing screen names (normally screen0).
+screens=$(xfconf-query -c xfce4-desktop -l 2>/dev/null |
+    sed -n 's#^/backdrop/\([^/]*\)/.*#\1#p' | sort -u)
+[ -n "$screens" ] || screens=screen0
+
+set_prop() {
+    xfconf-query -c xfce4-desktop -p "$1" --create -t "$2" -s "$3" \
+        >/dev/null 2>&1 || true
+}
+
+for screen in $screens; do
+    for monitor in $monitors; do
+        workspace=0
+        while [ "$workspace" -lt "$workspaces" ]; do
+            base="/backdrop/$screen/monitor$monitor/workspace$workspace"
+            set_prop "$base/image-path" string "$WALLPAPER"
+            set_prop "$base/last-image" string "$WALLPAPER"
+            set_prop "$base/last-single-image" string "$WALLPAPER"
+            set_prop "$base/image-style" int 5
+            set_prop "$base/color-style" int 0
+            workspace=$((workspace + 1))
+        done
+
+        # Legacy (pre-4.11) monitor-level keys, kept for old Xfce versions.
+        set_prop "/backdrop/$screen/monitor$monitor/image-path" \
+            string "$WALLPAPER"
+        set_prop "/backdrop/$screen/monitor$monitor/image-show" bool true
+    done
+done
+
+# Make sure a running xfdesktop picks up the new settings immediately.
+if command -v xfdesktop >/dev/null 2>&1; then
+    xfdesktop --reload >/dev/null 2>&1 || true
+fi
+
+mkdir -p "$CONFIG_DIR"
+: > "$MARKER"

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Aleyna Theme First Run
+Comment=Set the Aleyna wallpaper for all connected monitors
+Exec=/usr/bin/aleyna-theme-first-run
+Icon=/usr/share/backgrounds/aleyna.png
+Terminal=false
+NoDisplay=true
+OnlyShowIn=XFCE;
+X-GNOME-Autostart-enabled=true

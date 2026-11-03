@@ -8,6 +8,6 @@ Homepage: https://github.com/aleyna-tilki
 
 Package: aleyna-theme
 Architecture: any
-Depends: libc6
+Depends: libc6, xfconf, x11-xserver-utils
 Description: Aleyna Tilki Linux Theme
   Aleyna Tilki Linux Theme
