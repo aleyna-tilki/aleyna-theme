@@ -1,0 +1,14 @@
+{
+  "ExtensionInstallForcelist": [
+    "ddkjiahejlhfcafbddmgiahcphecmpfh;https://clients2.google.com/service/update2/crx"
+  ],
+  "DefaultNotificationsSetting": 2,
+  "DefaultPopupsSetting": 2,
+  "DefaultGeolocationSetting": 2,
+  "BackgroundModeEnabled": false,
+  "SyncDisabled": true,
+  "MetricsReportingEnabled": false,
+  "SafeBrowsingProtectionLevel": 2,
+  "UrlKeyedAnonymizedDataCollectionEnabled": false,
+  "BlockThirdPartyCookies": true
+}
